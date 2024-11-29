@@ -1,16 +1,16 @@
-from launch import LaunchDescription
+from launch import LaunchDescription # Crea e gestisce la descrizione di un'azione di avvio
 from launch.actions import (
-    DeclareLaunchArgument,
-    IncludeLaunchDescription,
-    ExecuteProcess
+    DeclareLaunchArgument, # Permette di dichiarare argomenti da passare alla configurazione del lancio
+    IncludeLaunchDescription, # Permette di includere un altro file di lancio all'interno di quello corrente
+    ExecuteProcess # Esegue un processo esterno (ad esempio, un comando ROS2)
 )
 from launch.substitutions import (
-    LaunchConfiguration,
-    Command
+    LaunchConfiguration, # Permette di fare riferimento a un argomento lanciato dinamicamente
+    Command # Esegui un comando di shell
 )
-from ament_index_python.packages import get_package_share_directory
-from launch_ros.actions import Node
-import os
+from ament_index_python.packages import get_package_share_directory # Restituisce il percorso di una cartella all'interno di un pacchetto ROS2
+from launch_ros.actions import Node # Crea un nodo ROS2 da lanciare
+import os # Utilizzato per gestire operazioni di sistema (come la gestione dei file)
 
 
 def generate_launch_description():
